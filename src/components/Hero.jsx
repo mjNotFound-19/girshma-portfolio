@@ -23,11 +23,11 @@ function FloatingOrb({ className, delay = 0 }) {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-svh flex items-center justify-center overflow-hidden px-4 sm:px-6">
       {/* Animated background orbs */}
-      <FloatingOrb className="w-96 h-96 bg-gold/30 -top-48 -left-48" delay={0} />
-      <FloatingOrb className="w-80 h-80 bg-gold-dark/20 top-1/2 -right-40" delay={2} />
-      <FloatingOrb className="w-64 h-64 bg-gold-light/15 bottom-20 left-1/4" delay={4} />
+      <FloatingOrb className="w-64 sm:w-96 h-64 sm:h-96 bg-gold/30 -top-32 sm:-top-48 -left-32 sm:-left-48" delay={0} />
+      <FloatingOrb className="w-48 sm:w-80 h-48 sm:h-80 bg-gold-dark/20 top-1/2 -right-24 sm:-right-40" delay={2} />
+      <FloatingOrb className="w-40 sm:w-64 h-40 sm:h-64 bg-gold-light/15 bottom-20 left-1/4" delay={4} />
 
       {/* Grid pattern overlay */}
       <div
@@ -39,16 +39,16 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Greeting line */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/20 bg-gold/5 mb-8"
+          className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-gold/20 bg-gold/5 mb-6 sm:mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-          <span className="text-sm text-gold tracking-widest uppercase">
+          <span className="text-xs sm:text-sm text-gold tracking-wide sm:tracking-widest uppercase">
             Welcome to my portfolio
           </span>
         </motion.div>
@@ -58,7 +58,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl sm:text-7xl lg:text-8xl font-serif font-bold mb-6 leading-tight"
+          className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-4 sm:mb-6 leading-tight"
         >
           <span className="text-cream">Hi, I'm </span>
           <br />
@@ -71,7 +71,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-lg sm:text-xl text-muted mb-10 max-w-2xl mx-auto leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-muted mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed"
         >
           {profile.tagline}
         </motion.p>
@@ -81,17 +81,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
           <a
             href="#experience"
-            className="px-8 py-3.5 bg-gold text-dark font-semibold rounded-full hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 no-underline"
+            className="w-full sm:w-auto text-center px-6 sm:px-8 py-3 sm:py-3.5 bg-gold text-dark font-semibold rounded-full hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 no-underline"
           >
             View My Work
           </a>
           <a
             href="#contact"
-            className="px-8 py-3.5 border border-gold/30 text-gold rounded-full hover:bg-gold/10 transition-all duration-300 no-underline"
+            className="w-full sm:w-auto text-center px-6 sm:px-8 py-3 sm:py-3.5 border border-gold/30 text-gold rounded-full hover:bg-gold/10 transition-all duration-300 no-underline"
           >
             Contact Me
           </a>
@@ -103,14 +103,14 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="flex flex-col items-center gap-2 text-muted"
         >
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
+          <span className="text-xs tracking-wide sm:tracking-widest uppercase">Scroll</span>
           <HiArrowDown className="text-gold" />
         </motion.div>
       </motion.div>

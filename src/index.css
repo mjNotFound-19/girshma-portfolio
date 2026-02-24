@@ -81,3 +81,21 @@ body {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
 }
+
+/* Prevent iOS zoom on input focus */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+}
+
+/* Ensure touch targets are accessible */
+@media (pointer: coarse) {
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}

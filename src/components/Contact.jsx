@@ -29,7 +29,7 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" className="relative py-32 px-6">
+    <section id="contact" className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gold/[0.02] to-transparent" />
 
       <div className="max-w-4xl mx-auto relative">
@@ -38,45 +38,45 @@ export default function Contact() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <span className="text-gold text-sm tracking-widest uppercase">
             Let's Connect
           </span>
-          <h2 className="text-4xl sm:text-5xl font-serif font-bold mt-3 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mt-3 mb-4">
             Get in Touch
           </h2>
-          <div className="glow-line w-24 mx-auto mb-6" />
-          <p className="text-muted max-w-lg mx-auto">
+          <div className="glow-line w-24 mx-auto mb-4 sm:mb-6" />
+          <p className="text-sm sm:text-base text-muted max-w-lg mx-auto">
             I'm always open to discussing new opportunities, collaborations, or
             just having a great conversation about supply chain and engineering.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12">
           {contactItems.map((item, i) => (
             <motion.div
               key={item.label}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-              className="glass rounded-2xl p-6 text-center hover:border-gold/30 transition-all duration-500 group"
+              className="glass rounded-2xl p-4 sm:p-5 md:p-6 text-center hover:border-gold/30 transition-all duration-500 group"
             >
-              <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-gold/20 transition-colors">
-                <item.icon className="text-gold text-xl" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-gold/20 transition-colors">
+                <item.icon className="text-gold text-lg sm:text-xl" />
               </div>
-              <p className="text-xs text-muted uppercase tracking-wider mb-2">
+              <p className="text-xs text-muted uppercase tracking-wider mb-1 sm:mb-2">
                 {item.label}
               </p>
               {item.href ? (
                 <a
                   href={item.href}
-                  className="text-cream hover:text-gold transition-colors text-sm no-underline"
+                  className="text-cream hover:text-gold transition-colors text-xs sm:text-sm no-underline break-all"
                 >
                   {item.value}
                 </a>
               ) : (
-                <p className="text-cream text-sm">{item.value}</p>
+                <p className="text-cream text-xs sm:text-sm">{item.value}</p>
               )}
             </motion.div>
           ))}
@@ -93,9 +93,9 @@ export default function Contact() {
             href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-dark font-semibold rounded-full hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 no-underline"
+            className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gold text-dark font-semibold rounded-full hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/20 no-underline text-sm sm:text-base"
           >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
             </svg>
             Connect on LinkedIn

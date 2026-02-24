@@ -14,12 +14,12 @@ function StatCard({ stat, index }) {
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="text-center p-6"
+      className="text-center p-3 sm:p-4 md:p-6"
     >
-      <div className="text-4xl sm:text-5xl font-bold text-gradient font-serif mb-2">
+      <div className="text-2xl sm:text-4xl md:text-5xl font-bold text-gradient font-serif mb-1 sm:mb-2">
         {stat.value}
       </div>
-      <div className="text-sm text-muted uppercase tracking-wider">
+      <div className="text-xs sm:text-sm text-muted uppercase tracking-wider">
         {stat.label}
       </div>
     </motion.div>
@@ -31,7 +31,7 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="relative py-32 px-6">
+    <section id="about" className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <motion.div
@@ -39,18 +39,18 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10 sm:mb-16"
         >
           <span className="text-gold text-sm tracking-widest uppercase">
             Get to know me
           </span>
-          <h2 className="text-4xl sm:text-5xl font-serif font-bold mt-3 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mt-3 mb-4">
             About Me
           </h2>
           <div className="glow-line w-24" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12 items-start">
           {/* Left - info card */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -58,23 +58,23 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-2"
           >
-            <div className="glass rounded-2xl p-8">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center text-dark text-2xl font-serif font-bold mb-6">
+            <div className="glass rounded-2xl p-5 sm:p-6 md:p-8">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center text-dark text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6">
                 GR
               </div>
-              <h3 className="text-xl font-semibold mb-1">{profile.name}</h3>
+              <h3 className="text-lg sm:text-xl font-semibold mb-1">{profile.name}</h3>
               <p className="text-gold text-sm mb-4">{profile.tagline}</p>
               <div className="space-y-3 text-sm text-muted">
                 <div className="flex items-center gap-2">
-                  <HiLocationMarker className="text-gold" />
-                  {profile.location}
+                  <HiLocationMarker className="text-gold shrink-0" />
+                  <span>{profile.location}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <HiMail className="text-gold" />
-                  {profile.email}
+                  <HiMail className="text-gold shrink-0" />
+                  <span className="break-all">{profile.email}</span>
                 </div>
               </div>
-              <div className="mt-6 pt-6 border-t border-white/5">
+              <div className="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-white/5">
                 <a
                   href={profile.linkedin}
                   target="_blank"
@@ -97,10 +97,10 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="lg:col-span-3"
           >
-            <p className="text-lg text-muted leading-relaxed mb-10">
+            <p className="text-base sm:text-lg text-muted leading-relaxed mb-6 sm:mb-10">
               {profile.summary}
             </p>
-            <p className="text-muted leading-relaxed mb-12">
+            <p className="text-sm sm:text-base text-muted leading-relaxed mb-8 sm:mb-12">
               Currently pursuing my Master's in Global Supply Chain Management at{" "}
               <span className="text-gold">Purdue University</span>, building on 5+ years
               of hands-on engineering experience at industry leaders like General Mills,
@@ -109,7 +109,7 @@ export default function About() {
             </p>
 
             {/* Stats grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 glass rounded-2xl">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 glass rounded-2xl">
               {stats.map((stat, i) => (
                 <StatCard key={stat.label} stat={stat} index={i} />
               ))}
